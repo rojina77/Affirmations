@@ -1,0 +1,28 @@
+<!-- app/views/affirmations/_form.html.erb -->
+<%= form_with(model: affirmation, local: true) do |form| %>
+  <% if affirmation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(affirmation.errors.count, "error") %> prohibited this affirmation from being saved:</h2>
+
+      <ul>
+      <% affirmation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_area :content %>
+  </div>
+
+  <div class="field">
+    <%= form.label :emotion_id %>
+    <%= form.collection_select :emotion_id, Emotion.all, :id, :name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>

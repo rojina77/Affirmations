@@ -1,0 +1,7 @@
+
+<h1>Affirmation</h1>
+<p><strong>Content:</strong> <%= @affirmation.content %></p>
+<p><strong>Emotion:</strong> <%= @affirmation.emotion.name %></p>
+
+<%= link_to 'Edit', edit_affirmation_path(@affirmation) %> |
+<%= link_to 'Back', affirmations_path %>
