@@ -1,6 +1,6 @@
 # app/controllers/emotions_controller.rb
 class EmotionsController < ApplicationController
-    before_action :set_emotion, only: [:show, :edit, :update, :destroy]
+    before_action :set_emotion, only: [:show, :edit, :update]
   
     def index
       @emotions = Emotion.all
@@ -16,7 +16,14 @@ class EmotionsController < ApplicationController
     end
   
     def edit
+      @emotion = Emotion.find(params[:id])
     end
+    
+
+    def emotion_params
+      params.require(:emotion).permit(:name, :emotions)
+    end
+    
   
     def create
       @emotion = Emotion.new(emotion_params)
@@ -33,7 +40,6 @@ class EmotionsController < ApplicationController
         redirect_to @emotion, notice: 'Emotion was successfully updated.'
       else
         render :edit
-      end
     end
   
     def destroy
@@ -51,4 +57,4 @@ class EmotionsController < ApplicationController
       params.require(:emotion).permit(:name, :intensity)
     end
   end
-  
+end

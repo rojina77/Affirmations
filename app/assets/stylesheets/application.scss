@@ -15,33 +15,48 @@
  */
  /* app/assets/stylesheets/custom.css */
 /* Add your custom styles here */
+@import "bootstrap";
+
+@font-face {
+  font-family: 'Canterbury';
+  src: url('canterbury.regular.ttf');
+}
+ .banner-background {
+  font-family: 'Canterbury'; 
+  background-image: url('s-l1600.jpg');
+  background-size: cover;
+}
+
+
 body {
-    font-family: Arial, sans-serif;
-  }
-  
-  .container {
-    margin-top: 20px;
-  }
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  margin-top: 20px;
+}
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
-  }
-  
-  .container {
-    margin-top: 20px;
-  }
-  
-  .navbar-brand {
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
-  .navbar-nav .nav-link {
-    font-size: 18px;
-  }
-  
-  .btn {
-    font-size: 16px;
-  }
-  
-  
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+}
+
+.container {
+  margin-top: 20px;
+}
+
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+  font-size: 18px;
+}
+
+.btn {
+  font-size: 16px;
+}
+
+:root {
+  --bs-body-bg: #e7a3f0;
+}

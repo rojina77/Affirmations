@@ -10,12 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_10_151235) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_13_072100) do
   create_table "affirmations", force: :cascade do |t|
     t.text "content"
     t.integer "emotion_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "emotion_affirmations", force: :cascade do |t|
+    t.integer "emotion_id", null: false
+    t.integer "affirmation_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["affirmation_id"], name: "index_emotion_affirmations_on_affirmation_id"
+    t.index ["emotion_id"], name: "index_emotion_affirmations_on_emotion_id"
   end
 
   create_table "emotions", force: :cascade do |t|
@@ -25,4 +34,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_10_151235) do
     t.integer "intensity"
   end
 
+  add_foreign_key "emotion_affirmations", "affirmations"
+  add_foreign_key "emotion_affirmations", "emotions"
 end

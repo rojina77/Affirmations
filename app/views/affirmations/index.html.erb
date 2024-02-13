@@ -1,13 +1,24 @@
-<!-- app/views/affirmations/index.html.erb -->
-<h1>Affirmations</h1>
+
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+  Affirmations
+  </button>
+
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+  </ul>
+</div>
+
 <table>
-  <thead>
+  <head>
     <tr>
       <th>Content</th>
       <th>Emotion</th>
       <th colspan="3"></th>
     </tr>
-  </thead>
+  </head>
   <tbody>
     <% @affirmations.each do |affirmation| %>
       <tr>
@@ -22,5 +33,15 @@
 </table>
 
 <br>
+
+<div class="affirmations-container">
+  <% @affirmations.each do |affirmation| %>
+    <div class="affirmation">
+      <p class="affirmation-content"><%= affirmation.content %></p>
+      <p class="affirmation-emotion">Emotion: <%= affirmation.emotion.name %></p>
+    </div>
+  <% end %>
+</div>
+
 
 <%= link_to 'New Affirmation', new_affirmation_path %>
