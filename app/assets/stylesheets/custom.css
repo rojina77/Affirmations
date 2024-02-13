@@ -2,23 +2,23 @@
 
 /* Add a background image */
 body {
-    background-image: url('/assets/background.jpg');
+    background-image: url('/assets/good.jpg');
     background-size: cover;
   }
   
   /* Customize navbar */
   .navbar {
-    background-color: #f8f9fa; /* Light gray background */
+    background-color: #a0d0ff; /* Light gray background */
   }
   
   .navbar-brand,
   .nav-link {
-    color: #343a40; /* Dark text color */
+    color: #ff75d5; /* Dark text color */
   }
   
   .navbar-brand:hover,
   .nav-link:hover {
-    color: #212529; /* Darker text color on hover */
+    color: #0a80f6; /* Darker text color on hover */
   }
   
   /* Customize form */
@@ -36,8 +36,8 @@ body {
   }
   
   .affirmation {
-    background-color: #fff;
-    border: 1px solid #ced4da;
+    background-color: #ffa154;
+    border: 1px solid #fd5151;
     border-radius: 4px;
     padding: 10px;
     margin-bottom: 10px;
@@ -49,6 +49,10 @@ body {
   
   .affirmation-emotion {
     font-style: italic;
-    color: #6c757d; /* Gray color */
+    color: #dbfc46; /* Gray color */
   }
-  
+
+  .p1 {
+    font-style: italic;
+    color: #dbfc46;
+  }

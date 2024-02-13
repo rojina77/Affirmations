@@ -17,13 +17,17 @@
 /* Add your custom styles here */
 @import "bootstrap";
 
+:root {
+  --bs-body-bg: #5dda4a;
+}
+
 @font-face {
   font-family: 'Canterbury';
   src: url('canterbury.regular.ttf');
 }
  .banner-background {
   font-family: 'Canterbury'; 
-  background-image: url('s-l1600.jpg');
+  background-image: image-url('visionboard.png');
   background-size: cover;
 }
 
@@ -58,5 +62,5 @@ body {
 }
 
 :root {
-  --bs-body-bg: #e7a3f0;
+  --bs-body-bg: #b2b3f0;
 }
