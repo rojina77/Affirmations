@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   resources :affirmations
   
   # Set the root path of your application
-  root 'emotions#index'
+  root 'home#index'
 end
 

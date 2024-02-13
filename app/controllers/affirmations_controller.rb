@@ -1,4 +1,5 @@
 class AffirmationsController < ApplicationController
+  before_action :set_affirmation, only: [:show, :edit, :update, :destroy]
 
   def new
     @affirmation = Affirmation.new
@@ -9,7 +10,7 @@ class AffirmationsController < ApplicationController
   end
 
   def show 
-    @affirmation = Affirmation.find(params[:id])
+    # No need to find the affirmation again since set_affirmation is called before this action
   end
   
   def create
@@ -22,9 +23,8 @@ class AffirmationsController < ApplicationController
     end
   end
 
-  def some_action
-    @affirmations = Affirmation.all
-    render 'affirmations/index'
+  def edit
+    # No need to find the affirmation again since set_affirmation is called before this action
   end
 
   def update
@@ -49,20 +49,4 @@ class AffirmationsController < ApplicationController
   def affirmation_params
     params.require(:affirmation).permit(:content, :emotion_id)
   end
-
-  def generate_affirmation_for_mood(mood)
-    # Implement logic to generate affirmations based on the mood
-    # Example: Return a hardcoded affirmation for demonstration
-    case mood.downcase
-    when 'sad'
-      'You are loved and valued.'
-    when 'happy'
-      'You radiate positivity and joy.'
-    else
-      'You are capable of overcoming any challenge.'
-    end
-  end
 end
-
-
- 

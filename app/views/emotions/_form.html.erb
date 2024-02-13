@@ -1,40 +1,32 @@
-
 <%= form_with(model: emotion, local: true) do |form| %>
   <% if emotion.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(emotion.errors.count, "error") %> prohibited this emotion from being saved:</h2>
 
       <ul>
-      <% emotion.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% emotion.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class: "form-control" %>
   </div>
 
-  <div class="row">
-  <div class="col-md-6 offset-md-3">
-    <%= form_with(model: emotion, local: true) do |form| %>
-      <div class="mb-3">
-        <%= form.label :name, class: "form-label" %>
-        <%= form.text_field :name, class: "form-control" %>
-      </div>
-      <div class="mb-3">
-      <%= form.label :intensity, class: "form-label" %>
-      <%= form.text_area :intensity, class: "form-control", rows: 3 %>
-    </div>
+  <div class="field">
+    <%= form.label :intensity %>
+    <%= form.text_area :intensity, class: "form-control", rows: 3 %>
+  </div>
 
-      <div class="mb-3">
-        <%= form.label :emotions, class: "form-label" %>
-        <%= form.text_area :emotions, class: "form-control", rows: 3 %>
-      </div>
+  <div class="field">
+    <%= form.label :emotions %>
+    <%= form.text_area :emotions, class: "form-control", rows: 3 %>
+  </div>
       
-      <%= form.submit "Submit", class: "btn btn-primary" %>
-    <% end %>
+  <div class="actions">
+    <%= form.submit class: 'btn btn-primary' %>
   </div>
-</div>
+<% end %>

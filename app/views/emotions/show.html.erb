@@ -2,13 +2,5 @@
 <h1><%= @emotion.name %></h1>
 <p><strong>Intensity:</strong> <%= @emotion.intensity %></p>
 
-<h1><%= @emotion.name %></h1>
-<h2>Affirmations</h2>
-<ul>
-  <% @affirmations.each do |affirmation| %>
-    <li><%= affirmation.content %></li>
-  <% end %>
-</ul>
-
 <%= link_to 'Edit', edit_emotion_path(@emotion) %> |
 <%= link_to 'Back', emotions_path %>
