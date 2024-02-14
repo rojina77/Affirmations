@@ -16,10 +16,6 @@ class EmotionsController < ApplicationController
     @emotion = Emotion.new
   end
 
-  def edit
-    @emotion = Emotion.find(params[:id])
-  end
-
   def create
     @emotion = Emotion.new(emotion_params)
 
@@ -28,6 +24,10 @@ class EmotionsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+    @emotion = Emotion.find_by(id:params[:id])
   end
 
   def update
@@ -39,12 +39,17 @@ class EmotionsController < ApplicationController
     end
   end
   
-  def delete
+  def destroy
+    @emotion = Emotion.find(params[:id])
     @emotion.destroy
-    redirect_to emotions_url, notice: "Emotion was successfully deleted."
+    redirect_to emotions_url, notice: 'Emotion was successfully destroyed.'
   end
-
+  
   private
+
+  def set_emotion
+    @emotion = Emotion.find(params[:id])
+  end
 
   def emotion_params
     params.require(:emotion).permit(:name, :intensity)

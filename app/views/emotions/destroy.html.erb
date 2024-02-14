@@ -1,0 +1,6 @@
+<%= link_to 'Edit', edit_emotion_path(@emotion) %> |
+<%= link_to 'Back', emotions_path %>
+
+<%= form_with(model: @emotion, method: :delete, local: true) do |form| %>
+  <%= form.submit 'Destroy', data: { confirm: 'Are you sure?' } %>
+<% end %>

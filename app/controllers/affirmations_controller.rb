@@ -28,7 +28,7 @@ class AffirmationsController < ApplicationController
   def edit
     @affirmation = Affirmation.find(params[:id])
   end
-  
+
   def update
     @affirmation = Affirmation.find(params[:id])
     if @affirmation.update(affirmation_params)
@@ -38,11 +38,10 @@ class AffirmationsController < ApplicationController
     end
   end
   
-
-  def delete
-    @affirmation.destroy
-    redirect_to affirmations_url, notice: "Affirmation was successfully deleted."
-  end
+ def destroy
+  @affirmation.destroy
+  redirect_to affirmations_url, notice: 'Affirmation was successfully destroyed.'
+end
 
   private
 

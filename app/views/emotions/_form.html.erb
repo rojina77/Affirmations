@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="field">
     <%= form.label :intensity %>
     <%= form.text_area :intensity, class: "form-control", rows: 3 %>
   </div>
