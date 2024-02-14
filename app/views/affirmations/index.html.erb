@@ -9,14 +9,13 @@
     </tr>
   </thead>
   <tbody>
+  <tr>
     <% @affirmations.each do |affirmation| %>
-      <tr>
         <td><%= affirmation.content %></td>
-        <td><%= affirmation.emotion.name %></td>
+      
         <td><%= link_to 'Show', affirmation %></td>
         <td><%= link_to 'Edit', edit_affirmation_path(affirmation) %></td>
-        <td><%= link_to 'Delete', affirmation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    </tr>
     <% end %>
   </tbody>
 </table>

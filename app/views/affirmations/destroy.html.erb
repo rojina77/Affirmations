@@ -1,0 +1,6 @@
+<%= link_to 'Edit', edit_affirmation_path(affirmation)) %> |
+<%= link_to 'Back', affirmations_path %>
+
+<%= form_with(model: @affirmationn\, method: :delete, local: true) do |form| %>
+  <%= form.submit 'Destroy', data: { confirm: 'Are you sure?' } %>
+<% end %>

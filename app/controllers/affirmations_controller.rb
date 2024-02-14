@@ -38,10 +38,10 @@ class AffirmationsController < ApplicationController
     end
   end
   
- def destroy
-  @affirmation.destroy
-  redirect_to affirmations_url, notice: 'Affirmation was successfully destroyed.'
-end
+  def destroy
+    @affirmation = Affirmation.find(params[:id])
+    redirect_to affirmations_url notice: 'Order was successfully destroyed.'
+  end
 
   private
 
