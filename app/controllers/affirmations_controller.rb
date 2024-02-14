@@ -1,6 +1,4 @@
 class AffirmationsController < ApplicationController
-  before_action :set_affirmation, only: [:show, :edit, :update, :destroy]
-
   def new
     @affirmation = Affirmation.new
   end
@@ -9,8 +7,12 @@ class AffirmationsController < ApplicationController
     @affirmations = Affirmation.all
   end
 
-  def show 
-    # No need to find the affirmation again since set_affirmation is called before this action
+  def show
+    @affirmation = Affirmation.find_by(id: params[:id])
+    if @affirmation.nil?
+      flash[:alert] = "Affirmation not found"
+      redirect_to affirmation_path
+    end
   end
   
   def create
@@ -24,19 +26,20 @@ class AffirmationsController < ApplicationController
   end
 
   def edit
-    # No need to find the affirmation again since set_affirmation is called before this action
+    @affirmation = Affirmation.find(params[:id])
   end
-
+  
   def update
+    @affirmation = Affirmation.find(params[:id])
     if @affirmation.update(affirmation_params)
       redirect_to @affirmation, notice: 'Affirmation was successfully updated.'
     else
       render :edit
     end
   end
+  
 
-  def destroy
-    @affirmation = Affirmation.find(params[:id])
+  def delete
     @affirmation.destroy
     redirect_to affirmations_url, notice: "Affirmation was successfully deleted."
   end

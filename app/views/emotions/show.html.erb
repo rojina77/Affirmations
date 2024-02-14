@@ -1,6 +1,7 @@
 
 <h1><%= @emotion.name %></h1>
 <p><strong>Intensity:</strong> <%= @emotion.intensity %></p>
+<p><strong>Emotion:</strong> <%= @emotion.name %></p>
 
 <%= link_to 'Edit', edit_emotion_path(@emotion) %> |
 <%= link_to 'Back', emotions_path %>

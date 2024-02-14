@@ -1,4 +1,3 @@
-# app/controllers/emotions_controller.rb
 class EmotionsController < ApplicationController
     
   def index
@@ -33,16 +32,14 @@ class EmotionsController < ApplicationController
 
   def update
     @emotion = Emotion.find(params[:id])
-
     if @emotion.update(emotion_params)
       redirect_to @emotion, notice: 'Emotion was successfully updated.'
     else
       render :edit
     end
   end
-
-  def destroy
-    @emotion = Emotion.find(params[:id])
+  
+  def delete
     @emotion.destroy
     redirect_to emotions_url, notice: "Emotion was successfully deleted."
   end
