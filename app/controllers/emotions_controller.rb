@@ -44,7 +44,7 @@ class EmotionsController < ApplicationController
   def destroy
     @emotion = Emotion.find(params[:id])
     @emotion.destroy
-    redirect_to emotions_url, notice: 'Emotion was successfully destroyed.'
+    redirect_to emotions_url, notice: "Emotion was successfully deleted."
   end
 
   private

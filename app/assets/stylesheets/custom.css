@@ -1,5 +1,6 @@
 /* app/assets/stylesheets/custom.css */
 
+
 /* Add a background image */
 body {
     background-image: url('/assets/good.jpg');
@@ -23,11 +24,11 @@ body {
   
   /* Customize form */
   .form-label {
-    color: #212529; /* Dark text color */
+    color: #007cf8; /* Dark text color */
   }
   
   .form-control {
-    border-color: #ced4da; /* Light gray border */
+    border-color: #fe8da2; /* Light gray border */
   }
   
  /* Add styling for the affirmations page */

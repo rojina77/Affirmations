@@ -4,13 +4,6 @@
   Affirmations
   </button>
 
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <li><a class="dropdown-item" href="#">Action</a></li>
-    <li><a class="dropdown-item" href="#">Another action</a></li>
-    <li><a class="dropdown-item" href="#">Something else here</a></li>
-  </ul>
-</div>
-
 <table>
   <head>
     <tr>
@@ -20,28 +13,17 @@
     </tr>
   </head>
   <tbody>
-    <% @affirmations.each do |affirmation| %>
-      <tr>
-        <td><%= affirmation.content %></td>
-        <td><%= affirmation.emotion.name %></td>
-        <td><%= link_to 'Show', affirmation %></td>
-        <td><%= link_to 'Edit', edit_affirmation_path(affirmation) %></td>
-        <td><%= link_to 'Destroy', affirmation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+  <% @affirmations.each do |affirmation| %>
+    <tr>
+      <td><%= affirmation.content %></td>
+      <td><%= affirmation.emotion ? affirmation.emotion.name : 'Unknown' %></td>
+      <td><%= link_to 'Show', affirmation %></td>
+      <td><%= link_to 'Edit', edit_affirmation_path(affirmation) %></td>
+      <td><%= link_to 'Delete', affirmation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</tbody>
 </table>
 
 <br>
-
-<div class="affirmations-container">
-  <% @affirmations.each do |affirmation| %>
-    <div class="affirmation">
-      <p class="affirmation-content"><%= affirmation.content %></p>
-      <p class="affirmation-emotion">Emotion: <%= affirmation.emotion.name %></p>
-    </div>
-  <% end %>
-</div>
-
-
 <%= link_to 'New Affirmation', new_affirmation_path %>
